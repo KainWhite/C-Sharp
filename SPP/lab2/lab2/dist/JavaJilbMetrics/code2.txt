@@ -1,0 +1,19 @@
+//23456789012345678901
+int a, b = 2, c, d = 2;
+Scanner.in.nextLine(a);
+Scanner.in.nextLine(b, c);
+const void l(int x, char z);
+{
+	int e, g;
+	if(e < a + b)
+	{
+		e = a+c;
+	}
+	g = b + d;
+	System.out.println(g);
+}
+int x(int e, c, d)
+{
+	e = c + d + 1;
+	d = e;
+}

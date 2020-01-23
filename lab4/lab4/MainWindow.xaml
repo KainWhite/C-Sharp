@@ -1,0 +1,42 @@
+﻿<Window x:Class="lab4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" SizeToContent="WidthAndHeight" MinWidth="520" MinHeight="250" MaxWidth="650" MaxHeight="500">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>-->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="40, 20">
+            <ComboBox x:Name="cbClassNames" Width="200"></ComboBox>
+            <Button x:Name="btnCreateObject" Margin="60, 0, 0, 0" Padding="10, 5"  Click="btnCreateObjectClick">Create</Button>
+            <Button x:Name="btnCreateDefaultObject" Margin="0, 0, 60, 0" Padding="5" Click="btnCreateObjectClick"></Button>
+            <Button x:Name="btnRemoveObject" Padding="10, 5" Click="btnRemoveObjectClick">Remove</Button>
+        </StackPanel>
+        <Border Grid.Row="1" BorderBrush="DimGray" BorderThickness="3" Margin="20, 0">
+            <ScrollViewer x:Name="scrollCreatedObjects" VerticalScrollBarVisibility="Auto">
+                <WrapPanel x:Name="wpCreatedObjects" Orientation="Horizontal"/>
+            </ScrollViewer>
+        </Border>
+        <DockPanel x:Name="dpControls" Grid.Row="2" Margin="40, 20">
+            <StackPanel>
+                <Button x:Name="btnSerialize" VerticalAlignment="Top" Padding="10, 5" Click="btnSerializeClick">Serialize</Button>
+                <Button x:Name="btnDeserialize" Margin="0, 10, 0, 0" VerticalAlignment="Top" Padding="10, 5" Click="btnDeserializeClick">Deserialize</Button>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right">
+                <Button x:Name="btnAddAssembly" Padding="10, 5" Click="btnAddAssemblyClick">Add assembly</Button>
+                <Button x:Name="btnSubscribe" Margin="0, 10, 0, 0" Padding="10, 5" Click="btnSubscribeClick">Subscribe file</Button>
+            </StackPanel>
+            
+        </DockPanel>
+    </Grid>
+</Window>

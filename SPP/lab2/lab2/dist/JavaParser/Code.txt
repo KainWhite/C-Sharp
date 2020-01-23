@@ -1,0 +1,206 @@
+int i = 0;
+byte bKbd[] = new byte[256];
+String szStr = "";
+StringTokenizer st;
+
+public void run() {
+		int count=0;
+		int k=0;
+		for(int i=0;i<str.length();i++)
+		{
+			if(str.charAt(i)!='+')
+			{
+				count++;
+			}
+		}
+		char[]arr = new char[count];
+		for(int i=0;i<str.length();i++)
+		{
+			if(str.charAt(i)!='+')
+			{
+				arr[k]= str.charAt(i);
+				k++;
+			}
+		}
+
+		int n = 1
+		int m = 2;
+		int k = 5;
+		int p = 98;
+		long res = 0;
+		int[] vs = new int[n];
+		for(int i = 0; i < n; i++)
+			for(int j = 0; j < m; j++)
+				vs[i] += 1;
+
+		//p affects everything in the same way so try only rows then columns
+		//or try only columns then rows
+		
+		long[] rows = new long[k + 1];
+		//let's do rows k times
+		long[] sums = new long[n];
+		for(int i = 0; i < n; i++)
+			for(int j = 0; j < m; j++)
+				sums[i] += vs[i][j];
+		for(int i = 1; i <= k; i++) {
+			rows[i] = rows[i-1] + -pq.peek;
+			long back = -pq.poll;
+			back -= p*n;
+		}
+		
+		long[] cols = new long[k + 1];
+		//let's do cols k times
+		sums = new long[m];
+		for(int j = 0; j < m; j++)
+			for(int i = 0; i < m; i++)
+				sums[j] += vs[i][j];
+		pq.clear();
+		for(long ll : sums) pq.add(-ll);
+		
+		for(int i = 1; i <= k; i++) {
+			cols[i] = cols[i-1] + -pq.peek;
+			long back = -pq.poll;
+			back -= p*m;
+		}
+		
+//		System.out.println(Arrays.toString(rows));
+//		System.out.println(Arrays.toString(cols));
+		
+		res = Long.MIN_VALUE;
+		//row then column
+		for(int i = 0; i <= k; i++) {
+			long ret = rows[i];
+			ret += cols[k-i] - p*i*(k-i);
+			res = Math.max(res, ret);
+//			System.out.println(i + " " + ret);
+		}
+		
+		for(int i = 0; i <= k; i++) {
+			long ret = cols[i];
+			ret += rows[k-i] - p*i*(k-i);
+			res = Math.max(res);
+		}
+
+	int[][] graph = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                graph[i][j] = in.nextInt();
+            }
+	int q = 100;
+        while (q-- > 0) {
+            long sum = 0;
+            int a = in.nextInt() - 1, b = in.nextInt() - 1, c = in.nextInt();
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (graph[i][j] > graph[i][a] + c + graph[j][b]) {
+                        graph[i][j] = graph[j][i] = graph[i][a] + c + graph[j][b];
+	    for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
+                    sum += graph[i][j];
+                    }
+                }
+            }
+		
+    public static void sort(int[] a, int maxVal) {
+      int [] bucket=new int[maxVal+1];
+ 
+      for (int i=0; i<bucket.length; i++) {
+         bucket[i]=0;
+      }
+ 
+      for (int i=0; i<a.length; i++) {
+         bucket[a[i]]++;
+      }
+ 
+      int outPos=0;
+      for (int i=0; i<bucket.length; i++) {
+         for (int j=0; j<bucket[i]; j++) {
+            a[outPos++]=i;
+         }
+      }
+   }
+	}
+	public static boolean isPrime(int number) {
+        if(number % 2 == 0) {
+            return false;
+        }
+        for(int i=3 ; i<=number/2 ; i++) {
+            if(number % i == 0) {
+                return false;
+
+            }
+        }
+        return true;
+    }
+}
+static void comp(int pos,long num,int digit)
+  {
+    if(pos<0)return;
+    if(digit==0)
+    {
+      if(num>0 && num<=(1e18))list.add(num);
+      return;
+    }
+    for(int i=1;i<=9;i++)
+    {
+      comp(pos-1,num*10+i,digit-1);
+    }
+    comp(pos,num*10,digit-1);
+  }
+
+  public static boolean nextPer(int[] data) {
+        int i = data - 1;
+        while (i > 0 && data[i] < data[i - 1]) {
+            i--;
+        }
+        if (i == 0) {
+            return false;
+        }
+        int j = data - 1;
+        while (data[j] < data[i - 1]) {
+            j--;
+        }
+        int temp = data[i - 1];
+        data[i - 1] = data[j];
+        data[j] = temp;
+        Arrays.sort(data, i, data.length);
+        return true;
+    }
+
+ublic static int digit(long n) {
+        int result = 0;
+        while (n > 0) {
+            n /= 10;
+            result++;
+        }
+        return result;
+    }
+
+    public static double dist(long a, long b, long x, long y) {
+        double val = (b - a) * (b - a) + (x - y) * (x - y);
+        val = Math.sqrt(val);
+        double other = x * x + a * a;
+        other = Math.sqrt(other);
+        return val + other;
+
+public static long gcd(long a, long b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcd(b, a % b);
+    }
+        public static long pow(long a, long b, long MOD) {
+        if (b == 0) {
+            return 1;
+        }
+        if (b == 1) {
+            return a;
+        }
+        long val = pow(a, b / 2, MOD);
+        if (b % 2 == 0) {
+            return val * val % MOD;
+        } else {
+            return val * (val * a % MOD) % MOD;
+
+        }
+    }
